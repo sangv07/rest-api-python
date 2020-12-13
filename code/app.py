@@ -34,13 +34,10 @@ api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
 
-# Whenever we run file (ex. python app.py) python creates especial name '__main__' for that file
-# below condition is for if we run app.py then execute below but if we inherite app.py in user.py
-    # and if we run user.py file then app.run should not run
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
-
 '''__name__ is a built-in variable which evaluates to the name of the current module.
 Thus it can be used to check whether the current script is being run on its own or
 being imported somewhere else by combining it with if statement, as shown below.
 '''
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+
